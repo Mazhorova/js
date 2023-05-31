@@ -1,2 +1,12 @@
 
-
+.calculator{
+  margin: 50px;
+  text-align: center;
+  border: 1px solid red;
+}
+button {
+  margin: 5px;
+}
+input{
+  margin: 5px;
+}
