@@ -1,12 +1,20 @@
-
-.calculator{
-  margin: 50px;
-  text-align: center;
-  border: 1px solid red;
+#app {
+  position: relative;
 }
-button {
-  margin: 5px;
+#site{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 200px;
 }
-input{
-  margin: 5px;
+#panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  z-index: 100;
+  padding: 10px;
+  box-shadow: inset -1px 0 0 rgb(0, 0, 0 .1);
+  overflow-y: auto;
 }
