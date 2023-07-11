@@ -51,16 +51,47 @@
 // alert(message)
 // if (!(age >= 14 && age <= 90)) 
 // alert(age)
-var surName = prompt("КТО ТАМ", '');
-if (surName === 'Админ') {
-    var pass = prompt('Пароль', '');
-    if (pass === 'Я главный') {
-        alert('здравствуйте');
-    }
-    else if (pass === '' || pass === null) {
-        alert('отмена');
-    }
-    else {
-        alert('неправильно');
-    }
-}
+// let surName = prompt ("КТО ТАМ", '');
+// if (surName === 'Админ') {
+//   let pass = prompt('Пароль', '');
+//   if (pass === 'Я главный') {
+//     alert('здравствуйте');
+//   } else if (pass === '' || pass === null) {
+//     alert('отмена')
+//   } else {
+//     alert('неправильно')
+//   }
+// }
+// let user = {}
+// name: 'jon';
+// surName: 'smit';
+// user.name = 'peter';
+// delete user.name;
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// };
+// let sum = 0;
+// for (let key in salaries) {
+//   sum += salaries[key];
+// }
+// alert(sum); 
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+// multiplyNumeric(menu);
+// function multiplyNumeric(obj) {
+//   for (let key in obj) {
+//     if (typeof obj[key] == 'number') {
+//       obj[key] *= 2;
+//     }
+//   }
+// }
+// menu = {
+//   width: 400,
+//   height: 600,
+//   title: "My menu"
+// };
