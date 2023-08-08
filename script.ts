@@ -480,7 +480,7 @@
 // }
 // console.log(`самый большой делитель ${x4 + y4}`)
 
-/ Определить количество цифр в введенном числе.
+
 
 // let userNumber = 25
 // let count = 0
@@ -603,7 +603,99 @@
 // console.log(multiplier(333))
 // console.log(multiplier(90))
 
+// Создайте пустой объект user.
+// Добавьте свойство name со значением John.
+// Добавьте свойство surname со значением Smith.
+// Измените значение свойства name на Pete.
+// Удалите свойство name из объекта.
+
+// let user = {}
+// user.name = 'jon'
+// user.surname = 'smit'
+// user.name = 'pete'
+// delete user.surname
+// console.log(user)
+
+
+// Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
+// function isEmpty(obj) {
+//     for (let key in obj){
+//         return: false
+//     }
+//     return:true
+// }
+// console.log(isEmpty)
+
+// let solyarise = {
+//     jon:110,
+//     ann:100,
+//     fup:200
+// }
+// let sum = 0;
+// for (let key in solyarise) {
+//   sum += solyarise[key];
+// }
+
+// console.log(sum); 
 
 
 
-Запросить у пользователя число и вывести все делители этого числа.
+
+// Задание 3
+// Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
+// 1. Функция вывода времени на экран.
+// 2. Функция изменения времени на переданное количество 
+// секунд.
+// 3. Функция изменения времени на переданное количество 
+// минут.
+// 4. Функция изменения времени на переданное количество 
+// часов.
+// Учтите, что в последних 3-х функциях, при изменении одной 
+// части времени, может измениться и другая. Например: если ко 
+// времени «20:30:45» добавить 30 секунд, то должно получиться 
+// «20:31:15», а не «20:30:75»
+
+let clock = {
+    hours:10,
+    minutes:22,
+    seconds:15,
+    showTime() {
+        alert(this.hours+":"+this.minutes+":"+this.seconds)
+    },
+    chTS(sec) {
+        this.seconds += sec
+        let min = Math.floor(this.seconds/60)
+        this.seconds = this.seconds%60
+        if (min) this.chTM(min)
+    },
+    chTM(min) {
+        this.minutes+=min
+        let h = Math.floor(this.minutes/60)
+        this.minutes = this.minutes%60
+        if (h) this.chTH(h)
+    },
+    chTH(h) {
+        this.hours+=h
+        this.hours = this.hours%24
+    },
+    changeTimeSeconds() {
+        let sec = +(prompt('na skoliko secund uvelichit vremia') as string)
+        this.chTS(sec)
+        this.showTime()
+    },
+    changeTimeMinutes() {
+        let min = +(prompt('na skoliko minut uvelichit vremia') as string)
+        this.chTM(min)
+        this.showTime()
+    },
+    changeTimeHours() {
+        let h = +(prompt('na skoliko chasov uvelichit vremia') as string)
+        this.chTH(h)
+        this.showTime()
+    },
+
+}
+
+clock.changeTimeSeconds()
+clock.changeTimeMinutes()
+clock.changeTimeHours()
