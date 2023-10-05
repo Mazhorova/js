@@ -518,47 +518,206 @@
 // части времени, может измениться и другая. Например: если ко 
 // времени «20:30:45» добавить 30 секунд, то должно получиться 
 // «20:31:15», а не «20:30:75»
-var clock = {
-    hours: 10,
-    minutes: 22,
-    seconds: 15,
-    showTime: function () {
-        alert(this.hours + ":" + this.minutes + ":" + this.seconds);
-    },
-    chTS: function (sec) {
-        this.seconds += sec;
-        var min = Math.floor(this.seconds / 60);
-        this.seconds = this.seconds % 60;
-        if (min)
-            this.chTM(min);
-    },
-    chTM: function (min) {
-        this.minutes += min;
-        var h = Math.floor(this.minutes / 60);
-        this.minutes = this.minutes % 60;
-        if (h)
-            this.chTH(h);
-    },
-    chTH: function (h) {
-        this.hours += h;
-        this.hours = this.hours % 24;
-    },
-    changeTimeSeconds: function () {
-        var sec = +prompt('na skoliko secund uvelichit vremia');
-        this.chTS(sec);
-        this.showTime();
-    },
-    changeTimeMinutes: function () {
-        var min = +prompt('na skoliko minut uvelichit vremia');
-        this.chTM(min);
-        this.showTime();
-    },
-    changeTimeHours: function () {
-        var h = +prompt('na skoliko chasov uvelichit vremia');
-        this.chTH(h);
-        this.showTime();
-    }
-};
-clock.changeTimeSeconds();
-clock.changeTimeMinutes();
-clock.changeTimeHours();
+// let clock = {
+//     hours:10,
+//     minutes:22,
+//     seconds:15,
+//     showTime() {
+//         alert(this.hours+":"+this.minutes+":"+this.seconds)
+//     },
+//     chTS(sec) {
+//         this.seconds += sec
+//         let min = Math.floor(this.seconds/60)
+//         this.seconds = this.seconds%60
+//         if (min) this.chTM(min)
+//     },
+//     chTM(min) {
+//         this.minutes+=min
+//         let h = Math.floor(this.minutes/60)
+//         this.minutes = this.minutes%60
+//         if (h) this.chTH(h)
+//     },
+//     chTH(h) {
+//         this.hours+=h
+//         this.hours = this.hours%24
+//     },
+//     changeTimeSeconds() {
+//         let sec = +(prompt('na skoliko secund uvelichit vremia') as string)
+//         this.chTS(sec)
+//         this.showTime()
+//     },
+//     changeTimeMinutes() {
+//         let min = +(prompt('na skoliko minut uvelichit vremia') as string)
+//         this.chTM(min)
+//         this.showTime()
+//     },
+//     changeTimeHours() {
+//         let h = +(prompt('na skoliko chasov uvelichit vremia') as string)
+//         this.chTH(h)
+//         this.showTime()
+//     },
+// }
+// clock.changeTimeSeconds()
+// clock.changeTimeMinutes()
+// clock.changeTimeHours()
+//?  добавление свойства обьекта
+// let  userInfo = {
+//     name: "Вася",
+// }
+// console.log(userInfo);
+// userInfo.age = 30;
+//? delete userInfo.age; // удаление обьекта
+// console.log(userInfo)
+// userInfo['like eat'] = true;
+// console.log(userInfo)
+// userInfo.adress = {
+//     city: 'Pekin',
+//     streat: 'Mobu',
+// }
+// console.log(userInfo)
+//? изменеие обьекта
+// let  userInfo = {
+//     name: "Вася",
+//     age: 30
+// }
+// console.log(userInfo)
+// userInfo.age = 11;
+// console.log(userInfo)
+//? копирование объекта
+// let  userInfo = {
+//    name: "Вася",
+//     age: 30
+// }
+// console.log(userInfo)
+// let user = userInfo;
+// console.log(user)
+// user.age = 18;
+// console.log(userInfo)
+//? проверка существования обьекта
+// let userInfo = {
+//     name: 'Vasya',
+//     age: 30
+// }
+//     if (userInfo.age) {
+//         console.log(userInfo)
+//     }
+//     let userInfo = {
+//     name: 'Vasya',
+//     age: 30,
+//     adress: {
+//         city: "Pekin",
+// ? street: "Mobu"
+//     }
+// }
+// console.log(userInfo.adress.street)
+//? чтобы не было ошибки надо поставить? знакбтогда будет проверка
+//  console.log(userInfo?.adress?.street)
+//? перебор всех циклов
+//  let userInfo = {
+//      name: 'Vasya',
+//      age: 30,
+//      adress: {
+//          city: "Pekin",
+//           street: "Mobu"
+//      }
+//  }
+// for (let key in userInfo) {
+// console.log(key);
+// // name,age,adress 
+// console.log(userInfo[key])
+// }
+// for (let key in userInfo.adress) {
+//     console.log(key);
+// }
+//? методы обьекта
+// let userInfo = {
+//      name: 'Vasya',
+//      age: 30,
+//      adress: {
+//        city: "Pekin",
+//        street: "Mobu"
+//           }
+//           showInfo: function() {
+//             console.log(`${userInfo.name}, ${userInfo.age} лут.Aдрес:Г.${userInfo.adress.city}`)
+//           } 
+//       }
+//       userInfo.showInfo()
+//   user можно заменить this это и будет текущий обьект
+//? функция конструктор нужно чтобы создать многожество однотипных обьектов операто new
+//? называется с большой буквы
+// function UserInfo(name) {
+//     this.name = name;
+//     this.age = 30;
+// }
+// console.log (new UserInfo('Vasy'))
+// console.log (new UserInfo('Lena'))
+//? Массивы
+//? изменение значений
+// let arr = ['ваня','лена']
+// arr[0] = 'коля',
+// console.log(arr)
+//? добавление нового
+// let arr = ['ваня','лена']
+// arr[2] = 'витя'
+// console.log(arr)
+//? метод push добавляет в конец массива
+// let arr = ['ваня','лена']
+// arr.push('ася');
+// console.log(arr)
+//? метод shift удаляет первый элемент
+// let arr = ['ваня','лена']
+// arr.shift()
+// console.log(arr)
+//? метод pop удаляет последний элемент 
+// let arr = ['ваня','лена']
+// arr.pop()
+// console.log(arr)
+//? метод unshift добавляет элемент в начало
+// let arr = ['ваня','лена']
+// arr.unshift('катя')
+// console.log(arr)
+//? удаление,добавление,изменение конкретных элементов
+// let arr = ['ваня','лена', 'петя']
+// delete arr[1]
+// console.log(arr)
+// ?метод splice позволяет удалять добвлять и заменять элементы
+// удаляем элемент
+// let arrOne = ['ваня','лена', 'петя']
+// arrOne.splice (1,1)
+// console.log(arrOne)
+// ?заменяем
+// let arrOne = ['ваня','лена', 'петя']
+// arrOne.splice(0,1, 'дима')
+// console.log(arrOne)
+//? добавляем
+// let arrOne = ['ваня','лена', 'петя']
+// arrOne.splice(1,0,'маша')
+// console.log(arrOne)
+//? удаляем
+// let arrOne = ['ваня','лена', 'петя']
+// arrOne.splice(-1,1)
+// console.log(arrOne)
+//? события
+// !'capture': false, фаза на которой должен сработать обработчик
+// !once: false, если true тогда обработчик будет автоматически удален после выполнения
+// !'passive': false если true то указывает что обработчикникогда не вызовет preventDefault()
+// !addEventListener используют чаще т.к события можно отловить, прослушивает несколько событий 
+// ?обьект события event
+// const menuBody = document.querySelector('.menu');
+// document.addEventListener('click', menu)
+// function menu(event) {
+//     if (event.target.closest('.menu_button')) {
+//         menuBody.classList.toggle('_active') 
+//     }
+//     if(!event.target.closest('.menu')) {
+//     menuBody.classList.remove('_active')}
+// }
+// const button = document.querySelector('.button')
+// button.onclick = function () {
+//     console.log('клик')
+// }
+// const button = document.querySelector('.menu_button')
+// function showConsole (event)  {
+//     console.log(event.target)
+//     console.log(event.type)
+// }
