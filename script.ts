@@ -894,3 +894,11 @@
 // }
 
 
+//?try catch finnaly
+let word = 'cat';
+  let translateCat = 'кот'
+  let crazy = 'vopl'
+  alert(word)
+  alert(translateCat)
+  alert('3')
+  alert(crazy)
