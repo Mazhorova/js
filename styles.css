@@ -1,6 +1,65 @@
-p {
-  width: 629px;
-height: 350px;
-margin: 20px;
-padding: 45px;
+* {margin: 0; padding: 0;}
+
+.content {
+    background-color: #dac9c9;
+    display: flex;
+    justify-content: center;
+    margin: 100px 50px 50px 50px;
+    font-family: sans-serif;
+    border: 5px solid rgb(211, 77, 77);
+    padding: 50px;
+}
+
+#area {
+    width: 156px;
+    margin: 80px auto;
+    font-size: 0;
+    
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 26px;
+    border: 1px solid #ca3b3b;
+    cursor: pointer;
+    vertical-align: middle;
+    
+}
+
+.cell:hover {
+    background-color: #f8bfbf;
+}
+
+.currentPlayer {
+    width: 140px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    color: #ec1616;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.stat table {
+    border-collapse: collapse;
+}
+
+.stat table, .stat th, .stat td {
+    border: 1px solid #f79494;
+    padding: 5px;
+    text-align: center;
+    color: red;
+}
+h1 {
+    text-align: center;
+    color: rgb(120, 139, 156);
+    margin: 30px;
 }

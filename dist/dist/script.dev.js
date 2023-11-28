@@ -1,3 +1,5 @@
+"use strict";
+
 // let admin,name;
 //  name = "Jonn";
 //  admin = name;
@@ -712,4 +714,22 @@
 //     if(!event.target.closest('.menu')) {
 //     menuBody.classList.remove('_active')}
 // }
-"use strict";
+// const button = document.querySelector('.button')
+// button.onclick = function () {
+//     console.log('клик')
+// }
+// const button = document.querySelector('.menu_button')
+// function showConsole (event)  {
+//     console.log(event.target)
+//     console.log(event.type)
+// }
+//?try catch finnaly
+// let word = 'cat';
+//   let translateCat = 'кот'
+//   let crazy = 'vopl'
+//   alert(word)
+//   alert(translateCat)
+//   alert('3')
+//   alert(crazy)
+var canvas = document.getElementById('game');
+var ctx = canvas.getContext('2d');

@@ -140,9 +140,9 @@
 // "Задача 9: Запросите у пользователя трехзначное число и выведите его задом наперед. Для решения задачи вам понадобится оператор % (остаток от деления)"
 // );
 // let nmb = prompt('введите число');
-// var a = Number(nmb % 10);
-// var b = Number((nmb - a) / 10 % 10);
-// var c = Number((nmb - a - b * 10) / 100);
+// let a = Number(nmb % 10);
+// let b = Number((nmb - a) / 10 % 10);
+// let c = Number((nmb - a - b * 10) / 100);
 // console.log('Перевертыш: ' + (a * 100 + b * 10 + c));
 //  Запросить у пользователя число и определить,
 //  оно полjжительное, отрицательное или ноль.
@@ -331,9 +331,9 @@
 // "Задача 9: Запросите у пользователя трехзначное число и выведите его задом наперед. Для решения задачи вам понадобится оператор % (остаток от деления)"
 // );
 // let nmb = prompt('введите число');
-// var a = Number(nmb % 10);
-// var b = Number((nmb - a) / 10 % 10);
-// var c = Number((nmb - a - b * 10) / 100);
+// let a = Number(nmb % 10);
+// let b = Number((nmb - a) / 10 % 10);
+// let c = Number((nmb - a - b * 10) / 100);
 // console.log('Перевертыш: ' + (a * 100 + b * 10 + c));
 //  Запросить у пользователя число и определить,
 //  оно полjжительное, отрицательное или ноль.
@@ -721,3 +721,163 @@
 //     console.log(event.target)
 //     console.log(event.type)
 // }
+//?try catch finnaly
+// let word = 'cat';
+//   let translateCat = 'кот'
+//   let crazy = 'vopl'
+//   alert(word)
+//   alert(translateCat)
+//   alert('3')
+//   alert(crazy)
+// @ts-ignore 
+var area = document.getElementById('area');
+var cell = document.getElementsByClassName('cell');
+var currentPlayer = document.getElementById('curPlyr');
+var player = "x";
+var stat = {
+    'x': 0,
+    'o': 0,
+    'd': 0
+};
+var winIndex = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+    [1, 5, 9],
+    [3, 5, 7]
+];
+for (var i = 1; i <= 9; i++) {
+    area.innerHTML += "<div class='cell' pos=" + i + "></div>";
+}
+for (var i = 0; i < cell.length; i++) {
+    cell[i].addEventListener('click', cellClick, false);
+}
+function cellClick() {
+    var data = [];
+    if (!this.innerHTML) {
+        this.innerHTML = player;
+    }
+    else {
+        alert("Ячейка занята");
+        return;
+    }
+    for (var i in cell) {
+        if (cell[i].innerHTML == player) {
+            data.push(parseInt(cell[i].getAttribute('pos')));
+        }
+    }
+    if (checkWin(data)) {
+        stat[player] += 1;
+        restart("Выграл: " + player);
+    }
+    else {
+        var draw = true;
+        for (var i in cell) {
+            if (cell[i].innerHTML == '')
+                draw = false;
+        }
+        if (draw) {
+            stat.d += 1;
+            restart("Ничья");
+        }
+    }
+    player = player == "x" ? "o" : "x";
+    currentPlayer.innerHTML = player.toUpperCase();
+}
+function checkWin(data) {
+    for (var i in winIndex) {
+        var win = true;
+        for (var j in winIndex[i]) {
+            var id = winIndex[i][j];
+            var ind = data.indexOf(id);
+            if (ind == -1) {
+                win = false;
+            }
+        }
+        if (win)
+            return true;
+    }
+    return false;
+}
+function restart(text) {
+    alert(text);
+    for (var i = 0; i < cell.length; i++) {
+        cell[i].innerHTML = '';
+    }
+    updateStat();
+}
+function updateStat() {
+    // @ts-ignore
+    document.getElementById('sX').innerHTML = stat.x;
+    // @ts-ignore
+    document.getElementById('sO').innerHTML = stat.o;
+    // @ts-ignore
+    document.getElementById('sD').innerHTML = stat.d;
+}
+// ?Мутация
+// примитивное значение не меняется
+// const a = 10 
+// let b = a
+// b = 3
+// console.log(a)
+// console.log(b)
+// а значение ссылочного типа меняется
+// const parson = {
+//     name: 'Vasya',
+//     age: 22,
+//     sureName: 'jhfkjhk'
+// }
+// это мутация
+// parson.age = 33
+// parson.sureName = 'njkj'
+// console.log(parson)
+//?функции
+// function addProduct(ignoreBlocked = false) {
+// 	console.log('addProduct', ignoreBlocked);
+// 	const isAvailable = isProductAvailable();
+// 	if (!isAvailable) {
+// 		console.log('Товара нет в наличие');
+// 		return;
+// 	}
+// 	if (!ignoreBlocked) {
+// 		const blocked = isBlocked();
+// 		if (blocked) {
+// 			console.log('Вы заблокированы');
+// 			return;
+// 		}
+// 	}
+// 	const possible = possibleToDelivery();
+// 	if (!possible) {
+// 		console.log('Нет возможности доставить');
+// 		return;
+// 	}
+// 	console.log('Товар добавлен в корзину');
+// 	return 'Все хорошо';}
+// const conculate = () => {
+//     const a = 10;
+//     const b = 15;
+//     return a + b
+// }
+// const sum = conculate
+// conculate()
+// console.log(sum)
+function getFilms(title) {
+    if (title === void 0) { title = 'Все фильмы'; }
+    var result = {
+        filmTittle: title,
+        film: []
+    };
+}
+console.log(getFilms);
+function getFilmsArray() {
+    var films = [];
+    var addNewFilm = addNewFilm(films, { name: 'Хроники Нарнии' }, 0);
+    addNewFilm(films, { name: 'Человек паук' }, 1);
+    addNewFilm(films, { name: 'Что-то еще' }, 2);
+    addNewFilm(films, { name: 'Плохой фильм' });
+    return films;
+}
+console.log(getFilmsArray);
