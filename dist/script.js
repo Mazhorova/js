@@ -881,3 +881,11 @@ function getFilmsArray() {
     return films;
 }
 console.log(getFilmsArray);
+var runElem = document.querySelector('.unit');
+var hacker = document.querySelector('.hacker');
+document.onmousemove = function (e) {
+    var x = e.clientX / window.innerWidth;
+    var y = e.clientY / window.innerHeight;
+    runElem.style.transform = "translate(-" + x * 50 + "px, -" + y * 50 + "px)";
+    hacker.style.transform = "translate(-" + x * 70 + "px, -" + y * 70 + "px)";
+};

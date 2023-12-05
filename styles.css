@@ -1,4 +1,8 @@
 * {margin: 0; padding: 0;}
+body {
+	width: 100%;
+	min-height: 100vh;
+}
 
 .content {
     background-color: #dac9c9;
@@ -15,6 +19,9 @@
     margin: 80px auto;
     font-size: 0;
     
+}
+#home {
+    background-color: rgb(125, 185, 219);
 }
 
 .cell {
@@ -58,8 +65,88 @@
     text-align: center;
     color: red;
 }
+
+
+
+
+
+
 h1 {
     text-align: center;
     color: rgb(120, 139, 156);
     margin: 30px;
 }
+
+
+
+header {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+.unit {
+	width: 110%;
+	height: 110%;
+	background: url(dist/img/city.jpg) no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.hacker {
+	width: 600px;
+	height: 712px;
+	background: url(dist/img/hacker.png);
+	position: absolute;
+	bottom: -100px;
+	left: 37%;
+}
+.text {
+	font-size: 100px;
+	font-weight: bold;
+	color: #ffffff;
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	transform: translate(-50%);
+	text-shadow: 5px 5px 15px #000000;
+	white-space: nowrap;
+}
+
+
+#home2 {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+.unit1 {
+	width: 110%;
+	height: 110%;
+	background: url(dist/img/road-in-forest_1127-3049.jpg) no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.car {
+	width: 515px;
+	height: 698px;
+	background: url(dist/img/car.png);
+	position: absolute;
+	bottom: -250px;
+	left: 37%;
+}
+#home2text1 {
+	font-size: 100px;
+	font-weight: bold;
+	color: #ffffff;
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	transform: translate(-50%);
+	text-shadow: 5px 5px 15px #000000;
+	white-space: nowrap;
+}
+
+
+
+
+
+ 
+      
